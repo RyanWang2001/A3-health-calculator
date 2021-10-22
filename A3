@@ -1,0 +1,35 @@
+print('----Welcome to use BMI calculation program----')
+name=input('Please enter your name:')
+
+personHeight = input("Please enter your height（m）:")
+personHeight = float(personHeight)
+
+
+personWeight = input("Please enter your weight（Kg):")
+personWeight = float(personWeight)
+
+
+personAge = input("Please enter your age：")
+personAge = int(personAge)
+
+
+personSex = input("Please enter your gender（male：1，female：0）:")
+personSex = int(personSex)
+
+BMI = personWeight / (personHeight * personHeight)
+personGood = 1.2 * BMI + 0.23 * personAge - 5.4 - 10.8 * personSex
+
+
+minNum = 15 + 10 * (1 - personSex)
+maxNum = 18 + 10 * (1 - personSex)
+
+if personGood < minNum
+print (recommended that you do more anaerobic exercise to keep shape, aerobic exercise once a week)
+
+elif minNum<=personGood<=maxNum
+print (great body, keep it)
+
+else personGood > maxNum 
+print (Recommend 20 minutes anaerobic exercise or 40 aerobic exercise)
+
+print("Your body fat rate：personGood)
