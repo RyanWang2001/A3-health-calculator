@@ -33,3 +33,5 @@ else personGood > maxNum
 print (Recommend 20 minutes anaerobic exercise or 40 aerobic exercise)
 
 print("Your body fat rate：personGood)
+
+
