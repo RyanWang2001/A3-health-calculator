@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>BMI Calculator</title>
+	</head>
+	<style media="screen">
+		body{
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			font-family: sans-serif;
+			background-image: linear-gradient(120deg,#ff6b6b, #5f27cd);
+			min-height: 100vh;
+		}
+		div{
+			width: 400px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			background-color: #ddd;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 1px 1px 20px #ee5256;
+		}
+		h2{
+			font-size: 35px;
+			font-weight: 600;
+		}
+		.text{
+			text-align: left;
+			margin-left: 150px;
+		}
+		#w, #h{
+			color: #223f5e;
+			text-align: left;
+			font-size: 20px;
+			font-weight: 200;
+			outline: none;
+			border: none;
+			background: none;
+			border-bottom: 1px solid #342f97;
+			width: 200px;
+		}
+			#w:focus, #h:focus{
+				border-bottom: 2px solid #342f97;
+				width: 300px;
+				transition: 0.5s;
+			}
+			#result{
+				color: #321f95;
+			}
+			#btn{
+				font-family: inherit;
+				margin-top: 10px;
+				border: none;
+				color: #ddd;
+				background-image: linear-gradient(120deg,#ff6b6b, #5f27cd);
+				width: 150px;
+				padding: 10px;
+				border-radius: 30px;
+				outline: none;
+				cursor: pointer;
+			}
+			#btn:hover{
+				box-shadow: 1px 1px 10px #331f97;
+			}
+			#info{
+				font-size: 12px;
+				font-family: inherit;
+			}
+			
+	</style>
+	<script type="text/Javascript">
+	
+	print('----Welcome to use BMI calculation program----')
+name=input('Please enter your name:')
+
+personHeight = input("Please enter your height（m）:")
+personHeight = float(personHeight)
+
+
+personWeight = input("Please enter your weight（Kg):")
+personWeight = float(personWeight)
+
+
+personAge = input("Please enter your age：")
+personAge = int(personAge)
+
+
+personSex = input("Please enter your gender（male：1，female：0）:")
+personSex = int(personSex)
+
+BMI = personWeight / (personHeight * personHeight)
+personGood = 1.2 * BMI + 0.23 * personAge - 5.4 - 10.8 * personSex
+
+
+minNum = 15 + 10 * (1 - personSex)
+maxNum = 18 + 10 * (1 - personSex)
+
+if personGood < minNum:
+    print ("recommended that you do more anaerobic exercise to keep shape, aerobic exercise once a week")
+
+elif minNum<=personGood<=maxNum:
+    print('great body, keep it')
+
+elif personGood > maxNum:
+    print ('Recommend 20 minutes anaerobic exercise or 40 aerobic exercise')
+
+    print ("Your body fat rate",personGood)
+
+
+
+	</script>
+	<body>
+		<div>
+			
+
+			<h2>Welcome to the Health Calculator</h2>
+			<p class="text">Please enter your name:</p>
+			<input type="text" id="name">
+			<p class="text">Please enter your weight</p>
+			<input type="text" id="w">
+			<p class="text">Please enter your height</p>
+			<input type="text" id="h">
+			<p id="result"></p>
+			<button id="btn" onClick="BMI()">Calculate</button>
+			<p id="info">Please enter height [m] and weight [kg]</p>
+	
+		</div>
+	</body>
+</html>
