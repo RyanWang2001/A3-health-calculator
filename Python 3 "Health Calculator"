@@ -23,13 +23,13 @@ personGood = 1.2 * BMI + 0.23 * personAge - 5.4 - 10.8 * personSex
 minNum = 15 + 10 * (1 - personSex)
 maxNum = 18 + 10 * (1 - personSex)
 
-if personGood < minNum
-print (recommended that you do more anaerobic exercise to keep shape, aerobic exercise once a week)
+if personGood < minNum:
+    print ("recommended that you do more anaerobic exercise to keep shape, aerobic exercise once a week")
 
-elif minNum<=personGood<=maxNum
-print (great body, keep it)
+elif minNum<=personGood<=maxNum:
+    print('great body, keep it')
 
-else personGood > maxNum 
-print (Recommend 20 minutes anaerobic exercise or 40 aerobic exercise)
+elif personGood > maxNum:
+    print ('Recommend 20 minutes anaerobic exercise or 40 aerobic exercise')
 
-print("Your body fat rate：personGood)
+    print ("Your body fat rate",personGood)
